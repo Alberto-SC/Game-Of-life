@@ -75,7 +75,7 @@
             }
             // console.log(e.which);
         }
-        RandomUniverse(1000,1000,50);
+        RandomUniverse(500,500,50);
 
 
         //MENU
