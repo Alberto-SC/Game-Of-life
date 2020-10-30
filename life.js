@@ -152,6 +152,9 @@
     function handleReset(){
         console.log("hello");
         quadTree.init();
+        drawer.cell_width=16;
+        drawer.Offset_x = 0;
+        drawer.Offset_y = 0;
         drawer.redraw(quadTree.root);
     }
     function handleDraw(){
