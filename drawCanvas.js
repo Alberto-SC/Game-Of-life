@@ -193,19 +193,26 @@ function CanvasDrawer() {
             y: Math.floor(((y-35) * pixel_ratio - Ofset_y + drawer.border_width /2) / drawer.cell_width)
         };
     }
-
+  
     this.zoom = function(out ,center_x,center_y){
         console.log(out,center_x,center_y);
+        console.log(Ofset_x,Ofset_y);
         if(out){
-            canvas.Ofset_x -= Math.round((canvas.Ofset_x - center_x)/2);
-            canvas.Ofset_y -= Math.round((canvas.Ofset_y - center_y)/2);
+            Ofset_x -= Math.round((Ofset_x - center_x)/2);
+            Ofset_y -= Math.round((Ofset_y - center_y)/2);
             drawer.cell_width/=2;
         }
         else{
-            canvas.Ofset_x -= Math.round(canvas.Ofset_x - center_x);
-            canvas.Ofset_y -= Math.round(canvas.Ofset_y - center_y);
+            Ofset_x += Math.round((Ofset_x - center_x));
+            Ofset_y += Math.round((Ofset_y - center_y));
             drawer.cell_width*=2;
         }
+        console.log(Ofset_x,Ofset_y);
+    }
+ 
+    this.zoom_at = function(out, center_x, center_y){
+        console.log(center_x,center_y);
+        this.zoom(out, center_x * pixel_ratio, center_y * pixel_ratio);
     }
 
     this.move = function(dx,dy){

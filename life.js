@@ -56,7 +56,7 @@
         }
         drawer.canvas.onmousewheel = function(e){
             e.preventDefault();
-            drawer.zoom((e.wheelDelta || -e.detail)<0,e.clientX,e.clientY);
+            drawer.zoom_at((e.wheelDelta || -e.detail)<0,e.clientX,e.clientY);
             redraw_canvas(quadTree.root);
         }
         window.onkeydown = function(e){
