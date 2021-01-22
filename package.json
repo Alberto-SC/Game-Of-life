@@ -1,11 +1,23 @@
 {
   "name": "gameoflife",
   "version": "1.0.0",
-  "description": "",
-  "main": "life.js",
+  "description": "https://albertosilva123.github.io/Game-Of-life/",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Alberto Silva",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertosilva123/Game-Of-life.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albertosilva123/Game-Of-life/issues"
+  },
+  "homepage": "https://github.com/albertosilva123/Game-Of-life#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "express": "^4.17.1"
+  }
 }

@@ -1,0 +1,115 @@
+body {
+    /* background-color: #000; */
+    margin: 0px;
+    color: #ccc;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0 0;
+}
+
+canvas {
+    position: absolute;
+}
+.black{
+    color: rgb(39, 37, 37);
+}
+
+.link{
+    stroke: rgb(149, 11, 11);
+    stroke-width: 1.5px;
+}
+/* .graph{ */
+    /* background-color: rgb(0, 0, 0); */
+/* } */
+
+.container{
+    position: absolute;
+    right: 0;
+    bottom: 8em;
+    width: 1000px;
+    max-width: 1000px;
+}
+.Menu{
+    display: block;
+    background-color: black;
+}
+.controls {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 10px;
+    letter-spacing: 3px;
+    font-family: "Questrial", sans-serif;
+  }
+  .controls .play, .controls .pause {
+    margin: 15px 25px;
+    color: #8840db;
+  }
+  .controls .option {
+    left: 10px;
+    position: absolute;
+    font-size: 0.8em;
+  }
+  .controls .add {
+    right: 10px;
+    position: absolute;
+    font-size: 0.8em;
+  }
+  .controls .volume {
+    margin-right: 30px;
+    font-size: 0.8em;
+  }
+  .controls .shuffle {
+    margin-left: 30px;
+    font-size: 0.8em;
+  }
+
+  .pause{
+    display: none;
+  }
+  .play, .pause, .next, .previous, .add, .volume, .shuffle,
+  .c2 , .c3 , .c4, .c5, .c6, .CR1, .CR2, .CR0 {
+    color: black;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  .Cgreen{
+    color: #23ca4d;
+  }
+  .Cblack{
+    color: black;
+  }
+  
+  .play:hover, .pause:hover, .next:hover, .previous:hover, .add:hover, .volume:hover, .shuffle:hover ,
+  .c2:hover, .c3:hover , .c4:hover , .c5:hover,.c6:hover, .CR1:hover, .CR2:hover, .CR0:hover{
+    color: #23ca4d;
+  }
+
+  .no_fade{
+    top: 45px;
+    background-color: #d8cbcb;
+  }
+  .Cerrar{
+    font-size: 1.5em;
+    color: rgb(204, 18, 18);
+  }
+  .Header_A{
+    position: absolute;
+    top: 50px;
+    right:  20px;
+    color: #d8cbcb;
+  }
