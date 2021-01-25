@@ -8,7 +8,7 @@ An implementation of the famous Conway´s Game of life web version avaliable at
 ### Built With
 
 All proyect was build with native HTML canvas for the principal simulation with the use 
-of a datastructure called QuadTree and D3.js for charts and graphs and a implementation 
+of a datastructure called QuadTree and D3.js for charts and graphs
 
 * [D3.js](https://d3js.org)
 
