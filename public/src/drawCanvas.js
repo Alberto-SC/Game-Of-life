@@ -12,7 +12,7 @@ function CanvasDrawer() {
     var pixel_ratio = 1;
     this.draw_quad = false;
     this.cell_color = "#cccccc";
-    this.background_color = "#011";
+    this.background_color = "#072417";
     // this.cell_color = "#444";
     // this.background_color = "#ffffff";
     this.cell_color_static = "#581AA6"
