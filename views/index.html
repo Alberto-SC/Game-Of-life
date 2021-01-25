@@ -36,16 +36,16 @@
 <body>
     <div class="Menu">
         <input type="file" class="btn btn-outline-secondar" id="myfile" accept="LIF/*">
-        <button type="button" class="btn btn-primary"  disabled id ="load" >Cargar patron</button>
-        <button type="button" class="btn btn-primary"  id ="save" >Guardar estado</button>
+        <button type="button" class="btn btn-primary"  disabled id ="load" >Load pattern</button>
+        <button type="button" class="btn btn-primary"  id ="save" >Save</button>
         <button type="button" class="btn btn-primary"  id ="Reset" >Reset</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#RandomModal" data-whatever="@getbootstrap">Random</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReglaModal" data-whatever="@getbootstrap">Establecer regla</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ReglaModal" data-whatever="@getbootstrap">Change rule</button>
         <label>Color célula </label><input type="color" id= "colorC" value="#cccccc" >
         <label>Color fondo </label><input type="color" id = "colorB" value="#001111">
-        <button type="button" class="btn btn-primary"  id ="draw_quad"  >Dibujar QuadTree</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Graficas" data-whatever="@getbootstrap">Graficas </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Atractores" data-whatever="@getbootstrap" onclick="init()"">Atractores </button>
+        <button type="button" class="btn btn-primary"  id ="draw_quad">QuadTree visualitation</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Graficas" data-whatever="@getbootstrap">Charts</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Atractores" data-whatever="@getbootstrap" onclick="init()"">Atractors </button>
         <!-- <div id="graph">
             <script>
                 console.log("Loading");
@@ -60,7 +60,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title black" id="exampleModalLabel">Generar universo random</h5>
+            <h5 class="modal-title black" id="exampleModalLabel">Create universe</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -68,18 +68,18 @@
         <div class="modal-body">
             <form>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label black">Número de filas:</label>
+                <label for="recipient-name" class="col-form-label black">Number of rows:</label>
                 <input type="text" class="form-control" id="sh">
             </div>
             <div class="form-group">
-                <label for="message-text" class="col-form-label black">Número de columnas:</label>
+                <label for="message-text" class="col-form-label black">Number of columns:</label>
                 <input type="text" class="form-control" id="sw">
             </div>
             </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary " onclick="handleRandom()">Crear</button>
+            <button type="button" class="btn btn-primary " onclick="handleRandom()">Create</button>
         </div>
         </div>
     </div>
@@ -96,16 +96,16 @@
             <div class="modal-body">
                 <form>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label black">Formato Bxx.../Sxx... ejemplo: B3/S23  </label>
+                    <label for="recipient-name" class="col-form-label black">Format Bxx.../Sxx... example: B3/S23  </label>
                     <br>
-                    <label for="recipient-name" class="col-form-label black">Regla: </label>
+                    <label for="recipient-name" class="col-form-label black">Rule: </label>
                     <input type="text" class="form-control" id="Rule">
                 </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary"  data-dismiss="modal"  id = "SetRule" >Establecer</button>
+                <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"  data-dismiss="modal"  id = "SetRule" >Set</button>
             </div>
             </div>
         </div>

@@ -13,8 +13,8 @@ function CanvasDrawer() {
     this.draw_quad = false;
     this.cell_color = "#cccccc";
     this.background_color = "#011";
-    this.cell_color = "#444";
-    this.background_color = "#ffffff";
+    // this.cell_color = "#444";
+    // this.background_color = "#ffffff";
     this.cell_color_static = "#581AA6"
     this.cell_color_ocilator = "2EBAD5"
     this.border_width = 0.25;

@@ -1,1 +1,53 @@
-https://albertosilva123.github.io/Game-Of-life/
+<!-- ABOUT THE PROJECT -->
+## About The Project
+![Screenshot](screenshot.png)
+
+An implementation of the famous Conway´s Game of life web version avaliable at https://mysterious-brook-87872.herokuapp.com
+
+### Built With
+
+All proyect was build with native HTML canvas for the principal simulation with the use 
+of a datastructure called QuadTree and D3.js for charts and graphs and a implementation 
+
+* [D3.js](https://d3js.org)
+
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```JS
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+<!-- USAGE EXAMPLES -->
+
+## Usage
+## Controls
+- space for start the simulation 
+- rigth click to draw/erase a cell 
+- left click to move around the space 
+- zoom 
+## Other functions
+- Change the rule of life 
+- Changes colors 
+- Upload and downdload patterns with extension .LIF
+- Visualitation of atractors of small spaces 
+- Charts of poblation, density and entropy 
+

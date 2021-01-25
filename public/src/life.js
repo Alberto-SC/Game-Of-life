@@ -216,6 +216,15 @@ function handleColorB(e){
     console.log(color);
     drawer.redraw(quadTree.root);
 }
+function handleColorBackHexa(color){
+    drawer.background_color = color;
+    drawer.redraw(quadTree.root);
+}
+
+function handleColorCellHexa(color){
+    drawer.cell_color = color;
+    drawer.redraw(quadTree.root);
+}
 
 function handleColorC(e){
     console.log("Celda");

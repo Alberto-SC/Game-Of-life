@@ -229,6 +229,8 @@ function render(){
 
 function init() {
   // if(svg ===undefined){
+    handleColorBackHexa("#ffffff")
+    handleColorCellHexa("#444")
     var x = document.getElementById("graph");
     console.log(x);
     x.innerHTML = "";
