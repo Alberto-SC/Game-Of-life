@@ -2,7 +2,8 @@
 ## About The Project
 ![Screenshot](screenshot.png)
 
-An implementation of the famous Conway´s Game of life web version avaliable at https://mysterious-brook-87872.herokuapp.com
+An implementation of the famous Conway´s Game of life web version avaliable at 
+[Game of life](https://mysterious-brook-87872.herokuapp.com)
 
 ### Built With
 
@@ -30,9 +31,9 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-3. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+3. Run localy 
+   ```sh
+   node index.js
    ```
 
 <!-- USAGE EXAMPLES -->
