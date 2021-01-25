@@ -37,6 +37,7 @@ var MAX_LENGTH = 100;
 var duration = 500;
 var chart = realTimeLineChart();
 var gen = 1;
+var velocity = 1000;
 
 (function(){
     window.onload = function(){
@@ -102,7 +103,7 @@ var gen = 1;
             }
             // console.log(e.which);
         }
-        RandomUniverse(50,50,0.2);
+        RandomUniverse(100,100,0.2);
 
 
         //MENU
@@ -126,7 +127,11 @@ var gen = 1;
         backgroundColor.addEventListener("input", handleColorB,false);
         cellColor.addEventListener("input", handleColorC,false);
 
-        seedData();
+        document.addEventListener( "contextmenu", function(e) {
+            e.preventDefault();
+            console.log(e);
+        });
+        // seedData();
         d3.select("#chart").datum(lineArr).call(chart);
         d3.select(window).on('resize', resize);
     }
@@ -158,6 +163,7 @@ function handleText() {
 function handleSave(){
     save();
 }
+
 function handleRule(){
     console.log(Rule.value);
     str = Rule.value;
@@ -185,6 +191,7 @@ function handleRandom(){
     console.log(column,filas);
     RandomUniverse(column,filas,0.2);
 }
+
 function handleReset(){
     console.log("hello");
     quadTree.init();
@@ -194,6 +201,7 @@ function handleReset(){
     gen = 0;
     drawer.redraw(quadTree.root);
 }
+
 function handleDraw(){
     console.log("HI",drawer.draw_quad);
     drawer.draw_quad = !drawer.draw_quad;
@@ -208,6 +216,7 @@ function handleColorB(e){
     console.log(color);
     drawer.redraw(quadTree.root);
 }
+
 function handleColorC(e){
     console.log("Celda");
     let color = cellColor.value;
@@ -217,27 +226,12 @@ function handleColorC(e){
     drawer.redraw(quadTree.root);
 }
 
-function randn_bm(min, max, skew) {
-    let u = 0, v = 0;
-    while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
-    while(v === 0) v = Math.random();
-    let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
-
-    num = num / 10.0 + 0.5; // Translate to 0 -> 1
-    if (num > 1 || num < 0) num = randn_bm(min, max, skew); // resample between 0 and 1 if out of range
-    num = Math.pow(num, skew); // Skew
-    num *= max - min; // Stretch to fill range
-    num += min; // offset to min
-    return num;
-}
-
 function load(file){
     quadTree.init();
     console.log(file);
     let x = null,y = null,negativo;
     let strn,first;
     for(var i = 0;i<file.length;i++){
-        // console.log(file[i]);
         if(file[i]== '#' && file[i+1] == 'P'){
             i+=3;
             strn = "";
@@ -274,25 +268,19 @@ function load(file){
             }
             y = parseInt(strn);
             if(negativo)y*=-1;
-            // console.log(x,y,first);
             x+=Math.abs(first)+1;
-            // console.log(x,y,first);
-            // console.log(i,file[i]);
         }
         else if(x!= null && y!= null){
             let auxy = y;
             while(i<file.length && file[i]!= '#'){
                 let auxx = x;
                 while(file[i]!= '\n'){
-                    console.log(auxx,auxy,file[i]);
                     if(file[i]== '*')
                     quadTree.setCell(auxx,auxy,1,3);
                     i++;
                     auxx++;
                 }
-                console.log("New line");
                 i++;
-                console.log(file[i]);
                 auxy++;
             }
             i--;
@@ -317,7 +305,6 @@ function save(){
                 str+='.';
             console.log(j,bound.right);
         }
-        console.log("NEW");
         str+='\n';
     }
     console.log(str);
@@ -340,9 +327,7 @@ function RandomUniverse(w,h,distribution){
     drawer.redraw(quadTree.root);
 }
 function redraw_canvas(node){
-    // if(!running || max_fps < 15){
     drawer.redraw(node);
-    // }
 }
 
 function do_draw(e){
@@ -357,7 +342,6 @@ function do_draw(e){
 }
 
 function do_move(e){
-    // console.log(e.clientX,e.clientY);
     if(last_x!== null){
         let dx = Math.round(e.clientX-last_x);
         let dy = Math.round(e.clientY-last_y);
@@ -380,7 +364,7 @@ function stop(callback){
 }
 
 function run(){
-    var n = 1,start,last_frame,frame_time = 1000/5,interval,per_frame = frame_time;
+    var n = 1,start,last_frame,frame_time = velocity/5,interval,per_frame = frame_time;
     running = true;
     start = Date.now();
     last_frame = start-per_frame;
@@ -396,9 +380,9 @@ function run(){
         var time = Date.now();
         if(per_frame * n <(time-start)){
             quadTree.next();
-            en = 1
-            en = get_entropia();
-            get_patterns();
+            en = 1;
+            // en = get_entropia();
+            // get_patterns();
             updateData(quadTree.root.poblacion,en)
             n++;
             gen++;
@@ -427,11 +411,9 @@ let q = new Array(1000000);
 let fx =[+0,+0,+1,-1,-1,+1,-1,+1]; 
 let fy =[-1,+1,+0,+0,+1,+1,-1,-1];
 function bfs(s){
-    // console.log("BFS",s);
     ind = 0;
     q[ind++] = s;
     let str = "";
-    // console.log(fx,fy);
     for(let i = 0;i<ind;i++){
         let u = q[i];
         if(u<0)
@@ -440,16 +422,12 @@ function bfs(s){
             vis[u] = true;
         let x = parseInt(fi(u)[1]);
         let y = parseInt(fi(u)[0]);
-        // console.log(x,y);
         str+=u+"_";
         for(let j = 0;j<8;j++){
             let nx = parseInt(fi(u)[1]);
             let ny = parseInt(fi(u)[0]);
-            // console.log(nx,ny);
             nx+=fx[j];
             ny+=fy[j];
-            // console.log("movimientos",fx[j],fy[j]);
-            // console.log(nx,ny,vis[f(ny,nx)],f(ny,nx),quadTree.getCell(nx,ny));
             if(f(ny,nx)<0){
                 if(!nvis[Math.abs(f(ny,nx))] && quadTree.getCell(nx,ny)){
                     q[ind++] = f(ny,nx);
@@ -469,7 +447,6 @@ function bfs(s){
     for(let i = 0;i<ind;i++){
         let u = q[i];
         if(u<0){
-            // console.log(u);
             nvis2[Math.abs(u)] = true;
             if(nlast[Math.abs(u)] === sha256Hash.toString())ntype[Math.abs(u)] = 1;
             else if(npatterns[Math.abs(u)].has(sha256Hash.toString())){ntype[Math.abs(u)] = 2;flag = true;}
@@ -691,6 +668,7 @@ function get_entropia(){
     if(entropy<0)return -entropy;
     return entropy;
 }
+
 function Get_next(sz,rule){
     let n = sz;
     let fx =[+0,+0,+1,-1,-1,+1,-1,+1]; 

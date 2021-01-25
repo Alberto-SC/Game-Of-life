@@ -93,19 +93,6 @@ class Universe{
 			node = node.hashmap_next;
 		}
 	}
-	// garbage_collect = function(){
-	// 	if(this.hashmap_size < (1 << 24) - 1){
-	// 		this.hashmap_size = this.hashmap_size << 1 | 1;
-	// 		this.hashmap = [];
-	// 	}
-	// 	this.max_load = this.hashmap_size * .9 | 0;
-	// 	for(var i = 0; i <= this.hashmap_size; i++)
-	// 		this.hashmap[i] = undefined;
-
-	// 	this.last_id = 4; 
-	// 	this.node_hash(this.root);
-	// };
-	
 	calc_hash(nw_id,ne_id,sw_id,se_id){
 		var hash = ((nw_id * 23 ^ ne_id) * 23 ^ sw_id) * 23 ^ se_id;
     	return hash;
@@ -136,7 +123,6 @@ class Universe{
 			if(level>this.root.level)
 				return;
 		}
-		// console.log("HI");
 		this.root = this.node_setCell(this.root,x,y,alive,type);
 	}
 	node_setCell(node,x,y,alive,type){

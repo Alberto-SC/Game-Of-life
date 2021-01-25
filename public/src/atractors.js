@@ -21,12 +21,10 @@ var width = w = window.innerWidth,
   changes = [];
 atractoresB3S23 = {
   2:{
-    0: "/atractores/2/b3s23/graph2.json",
-    1: "https://api.jsonbin.io/b/5ffb912ff98f6e35d5fada2d/2",
+    0: "https://api.jsonbin.io/b/5ffb912ff98f6e35d5fada2d/2",
   },
   3: {
-    0: "/atractores/3/b3s23/graph3.json",
-    1: "https://api.jsonbin.io/b/5ffb9ba568f9f835a3dd8a9d"
+    0: "https://api.jsonbin.io/b/5ffb9ba568f9f835a3dd8a9d"
   },
   4: {
     0: "/atractores/4/b3s23/graph4_1.json",
