@@ -3,7 +3,7 @@
 ![Screenshot](screenshot.png)
 
 An implementation of the famous Conway´s Game of life web version avaliable at 
-[Game of life](https://mysterious-brook-87872.herokuapp.com)
+[Game of life](https://as-thegameoflife.herokuapp.com/)
 
 ### Built With
 
